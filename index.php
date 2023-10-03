@@ -7,9 +7,15 @@
 </head>
 <body>
     <?php
-require_once "src/Tecnico.php";
-require_once "src/Programacao.php";
-require_once "src/Didatico.php";
+
+use Biblioteca\Didatico;
+use Biblioteca\Tecnico;
+use Biblioteca\Programacao;
+use Biblioteca\Web;
+
+//use Biblioteca\{Didatico, Tecnico, Programacao};
+
+require_once "vendor/autoload.php";
 
 $livroTecnico = new Tecnico;
 $livroTecnico->setTitulo("ADS");
@@ -43,6 +49,11 @@ $livroTecnico3->setFormato(["Digital"]);
 <p>Nome: <?=$livroTecnico3->getTitulo()?></p>
 <p>Autor: <?=$livroTecnico3->getAutor()?></p>
 <p>Formato: <?=$livroTecnico3->getFormato()?></p>
+
+<?php
+$LivroWeb = new Web;
+var_dump($LivroWeb);
+?>
 
 
 </body>
